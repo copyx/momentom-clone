@@ -1,5 +1,6 @@
 const weather = document.querySelector(".js-weather");
 
+// TODO: API_KEY가 노출되지 않도록 수정하자. (바꿀 때 API 키 새로 생성 필수)
 const API_KEY = "7c2b4e096c2574223039e8149ba014a3";
 const COORDS = "coords";
 
