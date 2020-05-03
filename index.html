@@ -26,10 +26,13 @@
         <i class="fas fa-edit"></i>
       </button>
     </div>
-    <form class="js-toDoForm">
-      <input type="text" placeholder="Write a to do" />
-    </form>
-    <ul class="js-toDoList"></ul>
+    <div class="todo">
+      <form class="todo__form">
+        <input type="text" name="task" placeholder="Write a to do" />
+      </form>
+      <ul class="todo__pending-list"></ul>
+      <ul class="todo__finished-list"></ul>
+    </div>
     <span class="js-weather"></span>
     <script src="js/clock.js"></script>
     <script src="js/greeting.js"></script>
