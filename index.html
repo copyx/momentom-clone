@@ -4,16 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum Clone</title>
+    <script
+      src="https://kit.fontawesome.com/ecf49bca79.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
   </head>
   <body>
     <div class="js-clock">
       <h1>00:00</h1>
     </div>
-    <form class="js-form form">
-      <input type="text" placeholder="What is your name?" />
+    <form class="name-form">
+      <input
+        class="name-form__input"
+        name="name"
+        type="text"
+        placeholder="What is your name?"
+      />
     </form>
-    <h4 class="js-greetings greetings"></h4>
+    <div class="greeting">
+      <h2 class="greeting__text">Hello :)</h2>
+      <button class="greeting__edit-btn">
+        <i class="fas fa-edit"></i>
+      </button>
+    </div>
     <form class="js-toDoForm">
       <input type="text" placeholder="Write a to do" />
     </form>

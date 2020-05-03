@@ -1,32 +1,35 @@
-const form = document.querySelector(".js-form");
-const input = document.querySelector("input");
-const greeting = document.querySelector(".js-greetings");
+const nameForm = document.querySelector(".name-form");
+const greeting = document.querySelector(".greeting");
+const greetingText = document.querySelector(".greeting__text");
 
 const USER_LS = "currentUser";
 const SHOWING_CN = "showing";
 
-// TODO: 이름 재설정하는 기능이 있어야할 것 같은데?!
-
-function saveName(text) {
-  localStorage.setItem("currentUser", name);
+function saveName(name) {
+  localStorage.setItem(USER_LS, name);
 }
 
-function handleSubmit(event) {
+function onSubmitNameForm(event) {
   event.preventDefault();
-  const name = input.value;
+  const name = event.target.name.value;
+
   paintGreeting(name);
   saveName(name);
 }
 
+function onClickEditBtn(event) {
+  askForName();
+}
+
 function askForName() {
-  form.classList.add(SHOWING_CN);
-  form.addEventListener("submit", handleSubmit);
+  nameForm.classList.add(SHOWING_CN);
+  greeting.classList.remove(SHOWING_CN);
 }
 
 function paintGreeting(text) {
-  form.classList.remove(SHOWING_CN);
+  greetingText.innerText = `Hello ${text} :)`;
+  nameForm.classList.remove(SHOWING_CN);
   greeting.classList.add(SHOWING_CN);
-  greeting.innerText = `Hello ${text}`;
 }
 
 function loadName() {
@@ -39,6 +42,10 @@ function loadName() {
 }
 
 function init() {
+  const greetingEditBtn = document.querySelector(".greeting__edit-btn");
+
+  greetingEditBtn.addEventListener("click", onClickEditBtn);
+  nameForm.addEventListener("submit", onSubmitNameForm);
   loadName();
 }
 

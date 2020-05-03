@@ -1,11 +1,18 @@
 @import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
 
+* {
+  font-family: "Do Hyeon", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
 html,
 body {
-  height: 100%;
+  height: 90%;
 }
 
 body {
+  font-family: "Do Hyeon", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #16a085;
   color: #ecf0f1;
   display: flex;
@@ -14,13 +21,61 @@ body {
   align-items: center;
 }
 
-.form,
-.greetings {
+input[type="text"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 7px solid #ecf0f1;
+  text-align: center;
+  color: #ecf0f1;
+  outline: none;
+  text-shadow: 2px 0px 6px #00000080;
+}
+
+input[type="text"]::placeholder {
+  color: #ecf0f1;
+}
+
+.name-form__input {
+  font-size: 80px;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.greeting__text {
+  font-size: 80px;
+  text-shadow: 2px 0px 6px #00000080;
+}
+
+.greeting__edit-btn {
+  font-size: 25px;
+  margin-left: 10px;
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+  color: #ecf0f1;
+  text-shadow: 2px 0px 6px #00000080;
+}
+
+.greeting__edit-btn:hover {
+  text-shadow: 4px 2px 6px #000000a0;
+}
+
+.greeting__edit-btn:active {
+  text-shadow: 4px 2px 6px #000000a0;
+  opacity: 0.6;
+}
+
+.name-form,
+.greeting {
   display: none;
 }
 
 .showing {
-  display: block;
+  display: flex;
 }
 
 @keyframes fadeIn {
